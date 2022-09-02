@@ -1,33 +1,17 @@
-import { useState } from "react";
+import { Navigate, Route, Routes } from "react-router-dom";
 import Registration from "./pages/Registration/Registration";
+import Login from "./pages/Login/Login";
+import Dashboard from "./pages/Dashboard/Dashboard"
 import "./App.scss";
 
 const App = () => {
-  const [user, setUser] = useState({});
-
-  const getUsers = async (link) => {
-    try {
-      const response = await fetch(link);
-
-      if (!response.ok) {
-        throw new Error(response.status + " error with request");
-      }
-      const data = await response.json();
-      setUser(data);
-      console.log(data);
-    } catch (error) {
-      alert(error.message);
-    }
-  };
-
   return (
-    <div className="App">
-      <button onClick={() => getUsers("http://localhost:8080/user/2")}>
-        Click for User
-      </button>
-      <div>{user.firstName}</div>
-      <Registration />
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Registration />} />
+      <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="*" element={<Navigate to="/login" replace />} />
+    </Routes>
   );
 };
 

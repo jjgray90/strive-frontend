@@ -1,7 +1,9 @@
-import { useState } from "react";
-import { registerUser } from "../../api/userService";
+import { Link, useNavigate } from "react-router-dom";
+import { useContext, useState } from "react";
+import { registerUser, setCurrentUser } from "../../api/userService";
 import TextInput from "../../components/TextInput/TextInput";
 import Button from "../../components/Button/Button";
+import UserContext from "../../context/UserContext";
 import "./Registration.scss";
 
 const Registration = () => {
@@ -11,25 +13,25 @@ const Registration = () => {
   const [location, setLocation] = useState();
   const [dob, setDob] = useState();
   const [image, setImage] = useState();
+  const { setUser } = useContext(UserContext);
+  const navigate = useNavigate();
 
   const handleRegister = async (event) => {
     event.preventDefault();
 
-    console.log({
+    const result = await registerUser({
       firstName,
       lastName,
       email,
       location,
+      dob,
+      image,
     });
 
-    await registerUser({
-      firstName,
-      lastName,
-      email,
-      location,
-      // dob,
-      // image,
-    });
+    if (result.isSuccess) {
+      setCurrentUser(email, setUser);
+      navigate("/dashboard");
+    }
   };
 
   const handleUpdateFirstName = (event) => {
