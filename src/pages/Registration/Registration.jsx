@@ -60,7 +60,7 @@ const Registration = () => {
 
   return (
     <div className="registration">
-      <form className="registration__form" onSubmit={handleRegister}>
+      <form className="registration__form" method="POST" encType="multipart/form-data" onSubmit={handleRegister}>
         <TextInput
           labelText="First Name"
           onChangeEvent={handleUpdateFirstName}
@@ -68,6 +68,7 @@ const Registration = () => {
         <TextInput labelText="Last Name" onChangeEvent={handleUpdateLastName} />
         <TextInput labelText="Email" onChangeEvent={handleUpdateEmail} />
         <TextInput labelText="Location" onChangeEvent={handleUpdateLocation} />
+        <input type="file" name="image" accept="image/png, image/jpeg" onChange={handleUpdateImage} />
         <Button label="Create Account" type="submit" />
       </form>
     </div>

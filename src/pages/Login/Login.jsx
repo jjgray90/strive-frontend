@@ -15,12 +15,17 @@ const Login = () => {
   const handleLogin = (event) => {
     event.preventDefault();
     setCurrentUser(email, setUser);
+
     navigate("/dashboard");
   };
 
   const handleUpdateEmail = (event) => {
     setEmail(event.target.value);
   };
+
+// useEffect(() => {},[])
+
+
 
   return (
     <div className="login">
