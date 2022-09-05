@@ -13,10 +13,15 @@ const App = () => {
   const navigate = useNavigate();
   const loggedInUser = localStorage.getItem("userEmail");
 
+  const logUserOut = () => {
+    localStorage.removeItem("userEmail");
+    setUser(undefined);
+  };
+
   useEffect(() => {
     if (loggedInUser) {
-      navigate("/dashboard");
       setCurrentUser(loggedInUser, setUser);
+      navigate("/dashboard");
     } else {
       navigate("/login");
     }
@@ -25,7 +30,7 @@ const App = () => {
   return (
     <div className="app">
       <div className="app__navbar">
-        <NavBar />
+        <NavBar logOut={logUserOut} />
       </div>
       <Routes>
         <Route path="/login" element={<Login />} />

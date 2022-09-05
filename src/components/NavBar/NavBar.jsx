@@ -1,9 +1,10 @@
 import "./NavBar.scss";
 
-const NavBar = () => {
+const NavBar = ({ logOut }) => {
   return (
     <div className="nav-bar">
-      <p>NavBar works</p>
+      <h2 className="nav-bar__heading">STRIVE</h2>
+      <p onClick={logOut}>Log Out</p>
     </div>
   );
 };

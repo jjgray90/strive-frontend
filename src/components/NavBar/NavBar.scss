@@ -1,4 +1,17 @@
+@use "../../styles/variables" as *;
+
 .nav-bar {
-  background-color: blue;
+  background-color: $color-secondary;
   height: 100%;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__heading {
+    font-family: $font-heading;
+    font-weight: unset;
+    color: $color-primary;
+    font-size: 3rem;
+  }
 }
