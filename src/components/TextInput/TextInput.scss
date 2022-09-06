@@ -1,2 +1,17 @@
+@use "../../styles/variables" as *;
+
 .text-input {
+  width: 80%;
+  &__label {
+    font-size: 1.3rem;
+    font-family: $font-primary;
+    color: $color-primary;
+  }
+  &__input {
+    border: unset;
+    background-color: $color-white;
+    color: $color-mother;
+    width: 100%;
+    height: 2rem;
+  }
 }

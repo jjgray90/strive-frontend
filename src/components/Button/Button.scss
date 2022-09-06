@@ -1,2 +1,17 @@
+@use "../../styles/variables" as *;
+
 .button {
+  font-family: $font-primary;
+  border: 2px solid $color-primary;
+  width: 80%;
+  padding: 0.4rem;
+  background-color: $color-secondary;
+  color: $color-primary;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-secondary;
+    border: 2px solid $color-secondary;
+  }
 }

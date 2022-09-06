@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useEffect, useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { useState, useContext, useEffect } from "react";
 import { setCurrentUser } from "../../api/userService";
 import TextInput from "../../components/TextInput/TextInput";
 import UserContext from "../../context/UserContext";
@@ -9,7 +9,7 @@ import "./Login.scss";
 
 const Login = () => {
   const [email, setEmail] = useState("");
-  const { setUser } = useContext(UserContext);
+  const { user, setUser } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleLogin = (event) => {
@@ -23,16 +23,22 @@ const Login = () => {
     setEmail(event.target.value);
   };
 
-// useEffect(() => {},[])
-
-
+  useEffect(() => {
+    if (user) {
+      navigate("/dashboard");
+    }
+  }, [user, navigate]);
 
   return (
     <div className="login">
+      <h2 className="login__heading">Strive</h2>
       <form className="login__form" onSubmit={handleLogin}>
         <TextInput labelText="Email" onChangeEvent={handleUpdateEmail} />
         <Button label="Log in" type="submit" />
       </form>
+      <p className="login__register" onClick={() => navigate("/register")}>
+        Sign Up
+      </p>
     </div>
   );
 };

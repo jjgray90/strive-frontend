@@ -7,11 +7,15 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  box-shadow: $box-shadow;
 
   &__heading {
-    font-family: $font-heading;
-    font-weight: unset;
-    color: $color-primary;
     font-size: 3rem;
+  }
+
+  &__logout {
+    color: $color-tertiary;
+    font-family: $font-primary;
+    cursor: pointer;
   }
 }
