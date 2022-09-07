@@ -1,12 +1,18 @@
 @use "../../styles/variables" as *;
 
-.text-input {
+.time-input {
   width: 80%;
   &__label {
     font-size: 1.3rem;
     font-family: $font-primary;
     color: $color-primary;
   }
+
+  &__container {
+    display: flex;
+    gap: 0.5rem;
+  }
+
   &__input {
     border: unset;
     background-color: $color-white;

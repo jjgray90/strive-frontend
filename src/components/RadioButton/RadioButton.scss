@@ -1,0 +1,42 @@
+@use "../../styles/variables" as *;
+
+.radio-button {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2rem 5rem 0 0;
+
+  &__label {
+    font-family: $font-primary;
+    color: $color-primary;
+  }
+
+  input[type="radio"]:after {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 15px;
+    top: 1px;
+    left: -1px;
+    position: relative;
+    background-color: $color-secondary;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $color-primary;
+  }
+
+  input[type="radio"]:checked:after {
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 15px;
+    top: 1px;
+    left: -1px;
+    position: relative;
+    background-image: url("../../assets/radio.svg");
+    background-size: contain;
+    background-color: $color-mother;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 2px solid $color-primary;
+  }
+}

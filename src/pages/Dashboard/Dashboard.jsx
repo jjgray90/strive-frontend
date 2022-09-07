@@ -2,9 +2,10 @@ import "./Dashboard.scss";
 import { useNavigate } from "react-router-dom";
 
 import { useContext, useEffect } from "react";
-import { getUserActivities } from "../../api/userService";
+import { getUserActivities } from "../../api/activityService";
 import UserContext from "../../context/UserContext";
 import ActivityCard from "../../components/ActivityCard/ActivityCard";
+import Button from "../../components/Button/Button";
 
 const Dashboard = () => {
   const { user, userActivityData, setUserActivityData } =
@@ -20,13 +21,19 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard">
-      <p>Welcome {user?.firstName}</p>
-      <div className="dashboard__activities">
-        {userActivityData !== undefined &&
-          userActivityData.map((activity) => (
+      {userActivityData !== undefined && userActivityData.length > 0 ? (
+        <div className="dashboard__activities">
+          {userActivityData.map((activity) => (
             <ActivityCard key={activity.id} activity={activity} />
           ))}
-      </div>
+        </div>
+      ) : (
+        <div className="dashboard__empty">
+          <p>Welcome to Strive, {user?.firstName}!</p>
+          <p>It looks like you're new here, let's add your first activity</p>
+          <Button label="Add Activity" onClick={() => navigate("/upload")} />
+        </div>
+      )}
     </div>
   );
 };

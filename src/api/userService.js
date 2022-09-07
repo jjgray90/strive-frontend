@@ -38,20 +38,4 @@ export const registerUser = async (userData) => {
   }
 };
 
-export const getUserActivities = async (userId, setUserActivityData) => {
-  try {
-    const response = await fetch(
-      `http://localhost:8080/user/activities/${userId}`
-    );
 
-    if (!response.ok) {
-      throw new Error(response.status + " error with request");
-    } else {
-      const data = await response.json();
-      console.log(data);
-      setUserActivityData([...data]);
-    }
-  } catch (error) {
-    alert(error.message);
-  }
-};

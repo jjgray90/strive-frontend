@@ -1,6 +1,12 @@
 import "./TextInput.scss";
 
-const TextInput = ({ labelText, inputName, value, onChangeEvent }) => {
+const TextInput = ({
+  labelText,
+  inputName,
+  value,
+  onChangeEvent,
+  placeholder,
+}) => {
   return (
     <div className="text-input">
       <label htmlFor={inputName} className="text-input__label">
@@ -14,6 +20,7 @@ const TextInput = ({ labelText, inputName, value, onChangeEvent }) => {
           className="text-input__input"
           value={value}
           onChange={onChangeEvent}
+          placeholder={placeholder}
           required
         />
       </div>
