@@ -7,6 +7,7 @@ import Registration from "./pages/Registration/Registration";
 import Login from "./pages/Login/Login";
 import ActivityUpload from "./pages/ActivityUpload/ActivityUpload";
 import Dashboard from "./pages/Dashboard/Dashboard";
+import Profile from "./pages/Profile/Profile";
 import { setCurrentUser } from "./api/userService";
 import UserContext from "./context/UserContext";
 
@@ -24,9 +25,6 @@ const App = () => {
   useEffect(() => {
     if (loggedInUser) {
       setCurrentUser(loggedInUser, setUser);
-      //   navigate("/dashboard");
-      // } else {
-      //   navigate("/login");
     }
   }, [setUser, navigate, loggedInUser]);
 
@@ -44,6 +42,7 @@ const App = () => {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Registration />} />
           <Route path="/upload" element={<ActivityUpload />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>

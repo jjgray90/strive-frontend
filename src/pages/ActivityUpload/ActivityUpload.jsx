@@ -50,9 +50,12 @@ const ActivityUpload = () => {
   };
 
   useEffect(() => {
+    if (!user) {
+      navigate("/login");
+    }
     setTime(hours + minutes + seconds);
     handleUpdatePace(time, distance);
-  }, [time, distance, hours, minutes, seconds]);
+  }, [navigate, user, time, distance, hours, minutes, seconds]);
 
   return (
     <div className="activity-upload">

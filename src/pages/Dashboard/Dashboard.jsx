@@ -1,6 +1,5 @@
 import "./Dashboard.scss";
 import { useNavigate } from "react-router-dom";
-
 import { useContext, useEffect } from "react";
 import { getUserActivities } from "../../api/activityService";
 import UserContext from "../../context/UserContext";

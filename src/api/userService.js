@@ -6,7 +6,6 @@ export const setCurrentUser = async (email, setUser) => {
       throw new Error(response.status + " error with request");
     } else {
       const data = await response.json();
-      console.log(data);
       setUser({ ...data });
       localStorage.setItem("userEmail", data.email);
     }
@@ -37,5 +36,3 @@ export const registerUser = async (userData) => {
     return { isSuccess: false };
   }
 };
-
-

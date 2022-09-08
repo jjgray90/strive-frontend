@@ -14,19 +14,52 @@
     cursor: pointer;
   }
 
-  .nav-bar__links {
+  .nav-bar__navigation {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 1.5rem;
     align-items: center;
     width: 50%;
-    max-width: 350px;
-    color: $color-primary;
-    font-family: $font-primary;
-    cursor: pointer;
+    max-width: 400px;
 
-    p {
-      &:hover {
-        color: $color-tertiary;
+    .nav-bar__links {
+      display: none;
+      gap: 1.5rem;
+      justify-content: space-between;
+      align-items: center;
+      color: $color-primary;
+      font-family: $font-primary;
+      cursor: pointer;
+
+      &--mobile {
+        height: 50px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        position: absolute;
+        top: 75px;
+        left: 0;
+        background-color: $color-secondary;
+        box-shadow: 0 0px 1px -1px gray;
+      }
+
+      p {
+        &:hover {
+          color: $color-tertiary;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .nav-bar {
+    .nav-bar__navigation {
+      .nav-bar__links {
+        display: flex;
+      }
+      .links__burger {
+        display: none;
       }
     }
   }
