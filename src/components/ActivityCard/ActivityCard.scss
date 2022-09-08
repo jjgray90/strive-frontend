@@ -2,12 +2,49 @@
 
 .activity-card {
   padding: 1rem;
-  background-color: $color-primary;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: $color-secondary;
   height: 15rem;
-  width: 15rem;
+  width: 270px;
   box-shadow: $box-shadow;
+  font-family: $font-primary;
+  color: $color-primary;
+  font-size: 1.6rem;
 
   &__heading {
     font-size: 1.6rem;
+  }
+
+  &__grid {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+
+    * {
+      background-color: $color-secondary-shade;
+    }
+  }
+
+  &__label {
+    padding: 0.1rem;
+    color: $color-secondary;
+    font-size: 0.8rem;
+  }
+
+  &__distance {
+    text-align: center;
+  }
+
+  &__pace {
+    text-align: center;
+  }
+
+  &__time {
+    text-align: center;
+    grid-column: 1 / 3;
   }
 }

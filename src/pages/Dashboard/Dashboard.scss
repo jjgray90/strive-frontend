@@ -2,17 +2,15 @@
 
 .dashboard {
   width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 2rem;
 
   &__activities {
     width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: auto;
-    gap: 4rem;
+    gap: 2rem;
     justify-items: center;
   }
 

@@ -56,26 +56,30 @@ const ActivityUpload = () => {
 
   return (
     <div className="activity-upload">
-      <h3 className="activity-upload__heading">Add a Run</h3>
-      <form
-        className="activity-upload__form"
-        method="POST"
-        onSubmit={handleUpload}
-      >
-        <TextInput
-          labelText={`Distance (${unitOfMeasureJSX})`}
-          onChangeEvent={handleUpdateDistance}
-        />
-        <TimeInput
-          labelText="Time (h : m : s)"
-          setHours={setHours}
-          setMinutes={setMinutes}
-          setSeconds={setSeconds}
-        />
-        <TextInput labelText="Location" onChangeEvent={handleUpdateLocation} />
-
-        <Button label="Upload Activity" type="submit" />
-      </form>
+      <div className="activity-upload__container">
+        <h3 className="activity-upload__heading">Add a Run</h3>
+        <form
+          className="activity-upload__form"
+          method="POST"
+          onSubmit={handleUpload}
+        >
+          <TextInput
+            labelText={`Distance (${unitOfMeasureJSX})`}
+            onChangeEvent={handleUpdateDistance}
+          />
+          <TimeInput
+            labelText="Time (h : m : s)"
+            setHours={setHours}
+            setMinutes={setMinutes}
+            setSeconds={setSeconds}
+          />
+          <TextInput
+            labelText="Location"
+            onChangeEvent={handleUpdateLocation}
+          />
+          <Button label="Upload Activity" type="submit" />
+        </form>
+      </div>
     </div>
   );
 };

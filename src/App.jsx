@@ -38,13 +38,16 @@ const App = () => {
       <div className="app__navbar">
         <NavBar logOut={logUserOut} />
       </div>
-      <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Registration />} />
-        <Route path="/upload" element={<ActivityUpload />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="*" element={<Navigate to="/login" replace />} />
-      </Routes>
+      <div className="app__body">
+        <div className="body-boi"></div>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Registration />} />
+          <Route path="/upload" element={<ActivityUpload />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="*" element={<Navigate to="/login" replace />} />
+        </Routes>
+      </div>
       <div className="app__footer">
         <Footer />
       </div>

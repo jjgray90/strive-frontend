@@ -1,14 +1,22 @@
 @use "../../styles/variables" as *;
 
 .login {
-  height: 20rem;
-  width: 20rem;
-  background-color: $color-secondary;
+  height: calc(100% - 75px);
+  width: 100%;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: center;
-  box-shadow: $box-shadow;
+
+  &__container {
+    height: 20rem;
+    width: 20rem;
+    background-color: $color-secondary;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: $box-shadow;
+  }
 
   &__heading {
     font-size: 3rem;

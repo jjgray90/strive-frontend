@@ -31,14 +31,16 @@ const Login = () => {
 
   return (
     <div className="login">
-      <h2 className="login__heading">Strive</h2>
-      <form className="login__form" onSubmit={handleLogin}>
-        <TextInput labelText="Email" onChangeEvent={handleUpdateEmail} />
-        <Button label="Log in" type="submit" />
-      </form>
-      <p className="login__register" onClick={() => navigate("/register")}>
-        Sign Up
-      </p>
+      <div className="login__container">
+        <h2 className="login__heading">Strive</h2>
+        <form className="login__form" onSubmit={handleLogin}>
+          <TextInput labelText="Email" onChangeEvent={handleUpdateEmail} />
+          <Button label="Log in" type="submit" />
+        </form>
+        <p className="login__register" onClick={() => navigate("/register")}>
+          Sign Up
+        </p>
+      </div>
     </div>
   );
 };
