@@ -3,8 +3,11 @@ import "./TextInput.scss";
 const TextInput = ({
   labelText,
   inputName,
+  ref,
   value,
+  defaultValue,
   onChangeEvent,
+  onLoadEvent,
   placeholder,
 }) => {
   return (
@@ -18,10 +21,13 @@ const TextInput = ({
           type="text"
           name={inputName}
           className="text-input__input"
+          ref={ref}
           value={value}
+          defaultValue={defaultValue}
           onChange={onChangeEvent}
+          onLoad={onLoadEvent}
           placeholder={placeholder}
-          required
+          // required
         />
       </div>
     </div>

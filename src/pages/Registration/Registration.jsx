@@ -1,5 +1,5 @@
-import { Link, useNavigate } from "react-router-dom";
-import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
 import { registerUser, setCurrentUser } from "../../api/userService";
 import TextInput from "../../components/TextInput/TextInput";
 import RadioButton from "../../components/RadioButton/RadioButton";
@@ -8,14 +8,23 @@ import UserContext from "../../context/UserContext";
 import "./Registration.scss";
 
 const Registration = () => {
-  const [firstName, setUserFirstName] = useState();
-  const [lastName, setUserLastName] = useState();
-  const [email, setEmail] = useState();
-  const [location, setLocation] = useState();
-  const [dob, setDob] = useState();
-  const [image, setImage] = useState();
-  const [km, setKm] = useState(true);
-  const { setUser } = useContext(UserContext);
+  const {
+    setUser,
+    handleUpdateFirstName,
+    handleUpdateLastName,
+    handleUpdateEmail,
+    handleUpdateLocation,
+    handleUpdateUOM,
+    handleUpdateDOB,
+    handleUpdateImage,
+    firstName,
+    lastName,
+    email,
+    location,
+    dob,
+    image,
+    km,
+  } = useContext(UserContext);
   const navigate = useNavigate();
 
   const handleRegister = async (event) => {
@@ -35,35 +44,6 @@ const Registration = () => {
       setCurrentUser(email, setUser);
       navigate("/dashboard");
     }
-  };
-
-  const handleUpdateFirstName = (event) => {
-    setUserFirstName(event.target.value);
-  };
-
-  const handleUpdateLastName = (event) => {
-    setUserLastName(event.target.value);
-  };
-
-  const handleUpdateEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const handleUpdateLocation = (event) => {
-    setLocation(event.target.value);
-  };
-
-  const handleUpdateUOM = (event) => {
-    const boolean = event.target.value === "true";
-    setKm(boolean);
-  };
-
-  const handleUpdateDOB = (event) => {
-    setDob();
-  };
-
-  const handleUpdateImage = (event) => {
-    setImage(event.target.value);
   };
 
   return (
