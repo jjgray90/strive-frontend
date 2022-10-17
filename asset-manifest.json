@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/strive-frontend/static/css/main.dba0e824.css",
+    "main.js": "/strive-frontend/static/js/main.76aa15df.js",
+    "static/js/787.90dd7d2f.chunk.js": "/strive-frontend/static/js/787.90dd7d2f.chunk.js",
+    "static/media/80532.jpg": "/strive-frontend/static/media/80532.ff4475562ca9c4be5ef1.jpg",
+    "index.html": "/strive-frontend/index.html",
+    "static/media/radio.svg": "/strive-frontend/static/media/radio.790ef81e18971771cd0a.svg",
+    "static/media/burger.svg": "/strive-frontend/static/media/burger.bc7d4ba9da66b917fed14000cdbd090c.svg",
+    "main.dba0e824.css.map": "/strive-frontend/static/css/main.dba0e824.css.map",
+    "main.76aa15df.js.map": "/strive-frontend/static/js/main.76aa15df.js.map",
+    "787.90dd7d2f.chunk.js.map": "/strive-frontend/static/js/787.90dd7d2f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dba0e824.css",
+    "static/js/main.76aa15df.js"
+  ]
+}
